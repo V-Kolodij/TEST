@@ -7,7 +7,7 @@ echo "<hr>";
 $qw="SELECT NAME,ZARPLATA FROM worker where ZARPLATA>'400'"; //краще брати ще й по ІД бо воно унікальне
 $upper=mysql_query($qw);
 if (!$upper){
-	echo "Select faild! ".mysql_error();
+	echo "Select failed! ".mysql_error();
 }
 //print_r($upper);
 // Апдейт зарплати:
@@ -19,7 +19,7 @@ while ($row=mysql_fetch_array($upper)){
 	//$new_zp="UPDATE worker SET ZARPLATA=$zp where NAME='$row['NAME']'"; так вимахувалося) присвоїв окремій змінній ім'я вище по коду
 	$j=mysql_query("UPDATE worker SET ZARPLATA='$new_zp' where NAME='$name'");
 	if(!$j){
-		echo "Update faild! ".mysql_error();
+		echo "Update failed! ".mysql_error();
 	}
 	$new_query = mysql_query("SELECT ZARPLATA FROM worker where NAME='$name'");
 	$zp = mysql_fetch_row($new_query);

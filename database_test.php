@@ -13,7 +13,7 @@ if (!$link){
 $select = mysql_select_db(DB);
 if (!$select){
 	echo "<br>";
-	 exit("Select DB is Faild!");
+	 exit("Select DB is Failed!");
 }else{
 	echo "<br>";
 	echo "Database ". DB."  is select!";

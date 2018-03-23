@@ -8,7 +8,7 @@ include 'database_test.php';
 $insert = ("INSERT INTO worker VALUES (NULL, '$name','$position','$age','$zarplata')");
 $ins = mysql_query($insert);
 if (!$ins){
-	echo "FAILD INSERT!".mysql_error();
+	echo "Insert Failed !".mysql_error();
 }else{
 	echo "Працівника добавлено!";
 }
